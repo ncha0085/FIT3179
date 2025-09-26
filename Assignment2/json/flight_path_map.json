@@ -6,36 +6,65 @@
   "projection": {"type": "mercator"},
   "layer": [
     {
-    "data": {
-    "name": "australia_map",
-    "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/main/Assignment2/json/ne_50m_admin_0_countries.topojson.json",
-    "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
+      "data": {
+        "name": "australia_map",
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/main/Assignment2/json/ne_50m_admin_0_countries.topojson.json",
+        "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
       },
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
     },
     {
       "data": {
         "name": "dom_citypairs_data",
-        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/main/Assignment2/data/dom_citypairs_web.csv"
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/Assignment2/data/dom_citypairs.csv"
       },
-      "mark": {"type": "circle", "tooltip": {"Field": "City1", "Type": "nominal", "Title": "City"}},
+      "mark": {"type": "rule"},
       "encoding": {
-        "longitude": {"field": "longitude_city1", "type": "quantitative"},
-        "latitude": {"field": "latitude_city1", "type": "quantitative"},
+        "longitude": {"field": "Longitude_City1", "type": "quantitative"},
+        "latitude": {"field": "Latitude_City1", "type": "quantitative"},
+        "longitude2": {"field": "Longitude_City2", "type": "quantitative"},
+        "latitude2": {"field": "Latitude_City2", "type": "quantitative"},
         "size": {
           "field": "Passenger_Trips",
           "type": "quantitative",
-          "title": "Passenger Trips for each city",
-          "aggregate": "sum"
+          "title": "Flights between cities"
         },
         "color": {
           "field": "Passenger_Trips",
           "type": "quantitative",
-          "title": "Passenger Trips for each city",
-          "scale": {"scheme": "bluegreen"},
-          "aggregate": "sum"
-        }
+          "title": "Flights between cities",
+          "scale": {"scheme": "bluegreen"}
+        },
+        "tooltip": [
+          {"field": "City1", "type": "nominal", "title": "Origin City"},
+          {"field": "City2", "type": "nominal", "title": "Destination City"},
+          {"field": "Passenger_Trips", "type": "quantitative", "title": "No. of Flights"}
+        ]
       }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/Assignment2/data/aus_city_coordinates.csv"
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 4,
+        "fontSize": 16,
+        "color": "black"
+      },
+      "encoding": {
+        "longitude": {"field": "lng", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "city", "type": "nominal"}
+      },
+      "transform": [
+    {
+      "aggregate": [],
+      "groupby": ["city", "lat", "lng"]
     }
+  ]
+    } 
   ]
 }

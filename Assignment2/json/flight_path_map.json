@@ -6,7 +6,7 @@
   "projection": {"type": "mercator"},
   "layer": [
     {
-      "data": {
+    "data": {
     "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/main/Assignment2/json/ne_50m_admin_0_countries.topojson.json",
     "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
       },

@@ -1,4 +1,4 @@
-Longitude_city1,Latitude_City1,Longitude_City2,Latitude_City2,City1,City2,Month,Passenger_Trips,Aircraft_Trips,Passenger_Load_Factor,Distance_GC_(km),RPKs,ASKs,Seats,Year,Month_num
+longitude_city1,latitude_city1,longitude_city2,latitude_city2,City1,City2,Month,Passenger_Trips,Aircraft_Trips,Passenger_Load_Factor,Distance_GC_(km),RPKs,ASKs,Seats,Year,Month_num
 138.59863,-34.92866,133.88075,-23.69804,ADELAIDE,ALICE SPRINGS,Jan-84,15743,143,81.8,1316,20717788,25327369,19246,1984,1
 138.59863,-34.92866,153.02513,-27.46977,ADELAIDE,BRISBANE,Jan-84,3781,32,89.8,1622,6132782,6829379,4210,1984,1
 138.59863,-34.92866,149.13001,-35.28094,ADELAIDE,CANBERRA,Jan-84,1339,12,94.7,972,1301508,1374348,1414,1984,1

@@ -32,7 +32,7 @@
         },
         {
           "aggregate": [
-            { "op": "sum", "field": "Passenger_Trips", "as": "Total_Flights" }
+            { "op": "sum", "field": "Aircraft_Trips", "as": "Total_Flights" }
           ],
           "groupby": [
             "City1",

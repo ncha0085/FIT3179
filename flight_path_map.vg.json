@@ -23,6 +23,14 @@
     },
     {
       "data": {
+        "name": "graticules_15",
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/output.topojson.json",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_15"}
+      },
+      "mark": {"type": "geoshape", "fill": "white", "stroke": "grey", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
         "name": "flight_paths",
         "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/dom_citypairs.csv"
       },

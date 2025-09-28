@@ -3,36 +3,34 @@
   "width": 800,
   "height": 450,
   "title": "Frequency of Domestic Flights across Australia in 2024",
-  "projection": { "type": "mercator", "center": [134, -25] },
+  "projection": {"type": "mercator", "center": [134, -25]},
   "layer": [
     {
       "data": {
         "name": "ocean",
-        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/Assignment2/json/output.topojson.json",
-        "format": { "type": "topojson", "feature": "ne_110m_ocean" }
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/output.topojson.json",
+        "format": {"type": "topojson", "feature": "ne_110m_ocean"}
       },
-      "mark": { "type": "geoshape", "fill": "#aeefff", "stroke": "white" }
+      "mark": {"type": "geoshape", "fill": "#aeefff", "stroke": "white"}
     },
     {
       "data": {
         "name": "state_lines",
-        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/Assignment2/json/output.topojson.json",
-        "format": { "type": "topojson", "feature": "STE_2016_AUST" }
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/output.topojson.json",
+        "format": {"type": "topojson", "feature": "STE_2016_AUST"}
       },
-      "mark": { "type": "geoshape", "fill": "white", "stroke": "#aeefff" }
+      "mark": {"type": "geoshape", "fill": "white", "stroke": "#aeefff"}
     },
     {
       "data": {
         "name": "flight_paths",
-        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/Assignment2/data/dom_citypairs.csv"
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/dom_citypairs.csv"
       },
       "transform": [
-        {
-          "filter": "datum.Year == 2024"
-        },
+        {"filter": "datum.Year == 2024"},
         {
           "aggregate": [
-            { "op": "sum", "field": "Aircraft_Trips", "as": "Total_Flights" }
+            {"op": "sum", "field": "Aircraft_Trips", "as": "Total_Flights"}
           ],
           "groupby": [
             "City1",
@@ -44,32 +42,32 @@
           ]
         }
       ],
-      "mark": { "type": "rule" },
+      "mark": {"type": "rule"},
       "encoding": {
-        "longitude": { "field": "Longitude_City1", "type": "quantitative" },
-        "latitude": { "field": "Latitude_City1", "type": "quantitative" },
-        "longitude2": { "field": "Longitude_City2", "type": "quantitative" },
-        "latitude2": { "field": "Latitude_City2", "type": "quantitative" },
+        "longitude": {"field": "Longitude_City1", "type": "quantitative"},
+        "latitude": {"field": "Latitude_City1", "type": "quantitative"},
+        "longitude2": {"field": "Longitude_City2", "type": "quantitative"},
+        "latitude2": {"field": "Latitude_City2", "type": "quantitative"},
         "size": {
           "field": "Total_Flights",
           "type": "quantitative",
           "title": "Number of Aircraft Trips",
-          "scale": { "range": [1, 10] },
+          "scale": {"range": [1, 10]},
           "legend": {
-          "labelFontSize": 14,
-          "titleFontSize": 14,
-          "symbolSize": 200
+            "labelFontSize": 14,
+            "titleFontSize": 14,
+            "symbolSize": 200
           }
         },
         "color": {
           "field": "Total_Flights",
           "type": "quantitative",
           "title": "Flights between cities",
-          "scale": { "scheme": "oranges" }
+          "scale": {"scheme": "oranges"}
         },
         "tooltip": [
-          { "field": "City1", "type": "nominal", "title": "Origin City" },
-          { "field": "City2", "type": "nominal", "title": "Destination City" },
+          {"field": "City1", "type": "nominal", "title": "Origin City"},
+          {"field": "City2", "type": "nominal", "title": "Destination City"},
           {
             "field": "Total_Flights",
             "type": "quantitative",
@@ -80,7 +78,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/Assignment2/data/aus_city_coordinates.csv"
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/aus_city_coordinates.csv"
       },
       "mark": {
         "type": "text",
@@ -91,30 +89,21 @@
         "color": "black"
       },
       "encoding": {
-        "longitude": { "field": "lng", "type": "quantitative" },
-        "latitude": { "field": "lat", "type": "quantitative" },
-        "text": { "field": "city", "type": "nominal" }
+        "longitude": {"field": "lng", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "city", "type": "nominal"}
       },
-      "transform": [
-        {
-          "aggregate": [],
-          "groupby": ["city", "lat", "lng"]
-        }
-      ]
+      "transform": [{"aggregate": [], "groupby": ["city", "lat", "lng"]}]
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/Assignment2/data/aus_city_coordinates.csv"
+        "url": "https://raw.githubusercontent.com/ncha0085/FIT3179/refs/heads/main/aus_city_coordinates.csv"
       },
-      "mark": {
-        "type": "point",
-        "color": "red",
-        "size": 100
-      },
+      "mark": {"type": "point", "color": "red", "size": 100},
       "encoding": {
-        "longitude": { "field": "lng", "type": "quantitative" },
-        "latitude": { "field": "lat", "type": "quantitative" },
-        "tooltip": { "field": "city", "type": "nominal", "title": "City" }
+        "longitude": {"field": "lng", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "tooltip": {"field": "city", "type": "nominal", "title": "City"}
       }
     }
   ]

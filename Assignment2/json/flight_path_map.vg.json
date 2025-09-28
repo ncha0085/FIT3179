@@ -50,6 +50,17 @@
         "latitude": { "field": "Latitude_City1", "type": "quantitative" },
         "longitude2": { "field": "Longitude_City2", "type": "quantitative" },
         "latitude2": { "field": "Latitude_City2", "type": "quantitative" },
+        "size": {
+          "field": "Total_Flights",
+          "type": "quantitative",
+          "title": "Number of Aircraft Trips",
+          "scale": { "range": [1, 10] },
+          "legend": {
+          "labelFontSize": 14,
+          "titleFontSize": 14,
+          "symbolSize": 200
+          }
+        },
         "color": {
           "field": "Total_Flights",
           "type": "quantitative",

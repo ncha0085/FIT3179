@@ -51,18 +51,18 @@
         "size": {
           "field": "Total_Flights",
           "type": "quantitative",
-          "title": "Number of Aircraft Trips",
           "scale": {"range": [1, 10]},
           "legend": {
             "labelFontSize": 14,
             "titleFontSize": 14,
-            "symbolSize": 200
+            "symbolSize": 2000,
+            "symbolType": "square"
           }
         },
         "color": {
           "field": "Total_Flights",
           "type": "quantitative",
-          "title": "Flights between cities",
+          "title": "Number of Aircraft Trips",
           "scale": {"scheme": "oranges"}
         },
         "tooltip": [
